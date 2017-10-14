@@ -1,5 +1,5 @@
 import axios from "axios";
-import {BASE_URL, API_KEY} from '../constants/api'
+import {BASE_URL, API_KEY} from '../constants/api';
 
 export const fetchForecast = () => {
   return function(dispatch) {
@@ -10,5 +10,5 @@ export const fetchForecast = () => {
       type: "FETCH_FORECAST",
       payload: axios.get(url)
     });
-  }
-}
+  };
+};
