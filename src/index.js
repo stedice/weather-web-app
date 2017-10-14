@@ -4,8 +4,7 @@ import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import WeatherApp from './components/weatherApp';
 import { fetchForecast } from './actions/forecastActions';
-
-//import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+//import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 import configureStore from './store/configureStore';
 

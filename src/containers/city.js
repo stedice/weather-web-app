@@ -10,7 +10,7 @@ class City extends Component {
     return (
       <div>
         <h2>{this.props.forecast.city.name}</h2>
-        <button onClick={() => this.props.fetchForecast()}>Click</button> 
+        <button className="btn" onClick={() => this.props.fetchForecast()}>Click</button> 
       </div>
     );
   }
