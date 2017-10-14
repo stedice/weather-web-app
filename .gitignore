@@ -40,4 +40,4 @@ dist
 .DS_Store
 
 # API secret key
-
+src/constants/api.js
