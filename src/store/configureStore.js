@@ -1,11 +1,14 @@
 import {createStore, compose, applyMiddleware} from 'redux';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
+import promise from "redux-promise-middleware";
 import thunk from 'redux-thunk';
-import createHistory from 'history/createBrowserHistory';
+import logger from "redux-logger";
+
+//import createHistory from 'history/createBrowserHistory';
 // 'routerMiddleware': the new way of storing route changes with redux middleware since rrV4.
 //import { routerMiddleware } from 'react-router-redux';
 import rootReducer from '../reducers';
-export const history = createHistory();
+//export const history = createHistory();
 function configureStoreProd(initialState) {
   //const reactRouterMiddleware = routerMiddleware(history);
   const middlewares = [
@@ -13,6 +16,7 @@ function configureStoreProd(initialState) {
 
     // thunk middleware can also accept an extra argument to be passed to each thunk action
     // https://github.com/gaearon/redux-thunk#injecting-a-custom-argument
+    promise(),
     thunk,
     //reactRouterMiddleware,
   ];
@@ -33,8 +37,10 @@ function configureStoreDev(initialState) {
 
     // thunk middleware can also accept an extra argument to be passed to each thunk action
     // https://github.com/gaearon/redux-thunk#injecting-a-custom-argument
+    promise(),
     thunk,
     //reactRouterMiddleware,
+    logger(),
   ];
 
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // add support for Redux dev tools
