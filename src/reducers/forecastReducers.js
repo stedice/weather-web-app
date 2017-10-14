@@ -19,8 +19,8 @@ export default (state=initialState, action) => {
         ...state,
         fetching: false,
         fetched: true,
-        city: action.payload.city,
-        forecast: action.payload.list,
+        city: action.payload.data.city,
+        forecast: action.payload.data.list,
       };
     }
   }

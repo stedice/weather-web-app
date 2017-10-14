@@ -1,17 +1,11 @@
 import React  from 'react';
-import PropTypes from 'prop-types';
 
-
-const WeatherApp = (props) => {
+const WeatherApp = () => {
   return (
     <div className="container">
-      {props.children}
+      <h1>Weather Forecast</h1>
     </div>
   );
-};
-
-WeatherApp.propTypes = {
-  children: PropTypes.object,
 };
 
 export default WeatherApp;
