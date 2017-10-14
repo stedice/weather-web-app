@@ -7,7 +7,6 @@ import { fetchForecast } from './actions/forecastActions';
 
 //import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-
 import configureStore from './store/configureStore';
 
 const store = configureStore();
@@ -16,5 +15,7 @@ render(
 	<Provider store={store}>
 		<WeatherApp />
 	</Provider>,
-	store.dispatch(fetchForecast())
+	document.getElementById('app')
 );
+
+store.dispatch(fetchForecast());
