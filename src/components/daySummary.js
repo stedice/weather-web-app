@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DayDetails from './dayDetails'
+import DayDetails from './dayDetails';
 
 
 const DaySummary = ({ item, dayName }) => {
@@ -16,7 +16,7 @@ const DaySummary = ({ item, dayName }) => {
             </a>
           </h4>
             </div>
-            <DayDetails item={item} dayName={dayName}/>
+            <DayDetails list={item} dayName={dayName}/>
         </div>
   );
 };

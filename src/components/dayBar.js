@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { daySummary, dayName, groupByDay } from '../utils/dayUtils';
+import { daySummary, dayName } from '../utils/dayUtils';
 import DaySummary from './daySummary';
 
 

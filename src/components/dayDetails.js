@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const DayDetails = ({ item, dayName }) => {
+const DayDetails = ({ list, dayName }) => {
   return (
     <div id={"#collapse"+dayName} className="panel-collapse collapse in">
         <div className="panel-body">
-            <p>body</p>
+            <p>body {list.weather.main}</p>
         </div>
     </div>
   );
@@ -14,7 +14,7 @@ const DayDetails = ({ item, dayName }) => {
 
 // props validation
 DayDetails.propTypes = {
-  item: PropTypes.object,
+  list: PropTypes.object,
   dayName: PropTypes.string,
 };
 
