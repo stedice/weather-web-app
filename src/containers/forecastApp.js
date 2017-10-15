@@ -2,20 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import City from '../components/city';
 import { fetchForecast } from '../actions/forecastActions';
+import { checkDay, daySummary } from '../utils/dayUtils';
 
 
-class Forecast extends Component {
-
-  checkDay(item, day = 0) { // day = 0,1,2,3,4
-    const oneDay = 86400;
-    let midnight = (new Date().setUTCHours(0, 0, 0, 0).valueOf() / 1000) + (oneDay * day);
-    return (item.dt > midnight) && (item.dt <= (midnight + oneDay));
-  }
+class ForecastApp extends Component {
 
   renderForecastList() {
     return this.props.forecastData.forecast.map((item) => {
-      console.log(this.checkDay(item, 1));
+      console.log(checkDay(item.dt, 1));
       return (
         <li key={item.dt}> {item.dt_txt} {item.main.temp} {item.weather[0].description} </li>
       );
@@ -23,16 +19,20 @@ class Forecast extends Component {
   }
 
   render() {
+    console.log(daySummary(this.props.forecastData.forecast));
     return (
-      <ul>
-        {this.renderForecastList()}               
-      </ul>
+      <div>
+        <City city={this.props.forecastData.city} />
+        <ul>
+          {this.renderForecastList()}               
+        </ul>
+      </div>
     );
   }
 }
 
 // props validation
-Forecast.propTypes = {
+ForecastApp.propTypes = {
   forecastData: PropTypes.object,
   fetchForecast: PropTypes.func
 };
@@ -49,4 +49,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Forecast);
+export default connect(mapStateToProps, mapDispatchToProps)(ForecastApp);
