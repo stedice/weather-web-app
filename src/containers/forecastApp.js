@@ -5,14 +5,12 @@ import { connect } from 'react-redux';
 import City from '../components/city';
 import DayBar from '../components/dayBar';
 import { fetchForecast } from '../actions/forecastActions';
-import { checkDay, daySummary } from '../utils/dayUtils';
 
 
 class ForecastApp extends Component {
 
   renderForecastList() {
     return this.props.forecastData.forecast.map((item) => {
-      console.log(checkDay(item.dt, 1));
       return (
         <li key={item.dt}> {item.dt_txt} {item.main.temp} {item.weather[0].description} </li>
       );
@@ -20,7 +18,6 @@ class ForecastApp extends Component {
   }
 
   render() {
-    console.log(daySummary(this.props.forecastData.forecast));
     return (
       <div>
         <City city={this.props.forecastData.city} />
