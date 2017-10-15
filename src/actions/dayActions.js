@@ -1,9 +1,6 @@
 export const changeDay = (day=0) => {
-  console.log("fire", day);
-  return function(dispatch) {
-    dispatch({
+  return {
       type: "CHANGE_DAY",
       payload: day
-    });
-  };
+    };
 };

@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import WeatherIcon from '../components/weatherIcon';
 import { changeDay } from '../actions/dayActions';
 
-const DaySummary = ({ item, dayName, day }) =>{ 
+const DaySummary = ({ item, dayName, day, daySelected, changeSelectedDay }) =>{ 
            //set active dayreducer
   return (
     <li role="presentation" >
-      <a href="#"  onClick={() => changeDay(day)}>
+      <a href="#"  onClick={() => changeSelectedDay(day)}>
         <h3>{dayName}</h3>
         <WeatherIcon code={item.weather.icon} alt={item.weather.description}/>
         <h3>{Math.floor(item.main.temp_max)} <small>°C</small></h3> 
@@ -25,6 +25,7 @@ DaySummary.propTypes = {
   dayName: PropTypes.string,
   day: PropTypes.number,
   daySelected: PropTypes.number,
+  changeDayy: PropTypes.function,
 };
 
 const mapStateToProps = (state) => {
@@ -35,7 +36,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    changeDay: changeDay
+    changeSelectedDay: changeDay
   }, dispatch);
 };
 
