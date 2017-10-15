@@ -1,22 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DayDetails from './dayDetails';
 
 
 const DaySummary = ({ item, dayName }) => {
   return (
-    <div className="panel panel-default">
-        <div className="panel-heading">
-          <h4 className="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href={"#collapse"+dayName}>
-              {dayName}
-              <img src={"http://openweathermap.org/img/w/"+item.weather.icon+".png"} alt={item.weather.main}/>
-              <strong>{Math.floor(item.main.temp_max)} </strong> <small>{Math.floor(item.main.temp_min)}</small>
-            </a>
-          </h4>
-            </div>
-            <DayDetails list={item} dayName={dayName}/>
-        </div>
+    <li role="presentation" >
+      <a href={"#collapse"+dayName}>
+        <h3>{dayName}</h3>
+        <img src={"http://openweathermap.org/img/w/"+item.weather.icon+".png"} alt={item.weather.main}/>
+        <h3>{Math.floor(item.main.temp_max)} <small>°C</small></h3> 
+        <h4 className="text-muted">{Math.floor(item.main.temp_min)} <small>°C</small></h4>
+      </a>
+    </li>
   );
 };
 

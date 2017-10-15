@@ -6,11 +6,11 @@ import DaySummary from './daySummary';
 
 const DayBar =({dayGroups}) => {
   return (
-      <div className="panel-group" id="accordion">
+    <ul className="nav nav-tabs nav-justified">
         {dayGroups.map((group, i) => 
           <DaySummary key={i} item={daySummary(group)} dayName={dayName(i)}/>)
         }
-      </div>
+    </ul>
     );
 };
 
