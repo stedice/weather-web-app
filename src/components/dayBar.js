@@ -8,7 +8,7 @@ const DayBar =({dayGroups}) => {
   return (
     <ul className="nav nav-tabs nav-justified">
         {dayGroups.map((group, i) => 
-          <DaySummary key={i} item={daySummary(group)} dayName={dayName(i)}/>)
+          <DaySummary key={i} item={daySummary(group)} dayName={dayName(i)} day={i}/>)
         }
     </ul>
     );

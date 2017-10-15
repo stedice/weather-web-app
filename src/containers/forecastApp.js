@@ -11,11 +11,23 @@ import { groupByDay } from '../utils/dayUtils';
 
 class ForecastApp extends Component {
   render() {
+    if (this.props.fcData.fetching){
+      return (<h1>Loading...</h1>);
+    }
+    else if (this.props.fcData.error){
+      return (<div><h4>Error: </h4><p>{this.props.fcData.error}</p></div>);
+    }
+    const grouped = groupByDay(this.props.fcData.forecast);
+    const content = (
+      <div>
+        <DayBar dayGroups={grouped}/>
+        <DayDetails list={grouped[0]} />
+      </div>);//this.props.fcData.forecast
+    
     return (
       <div>
-        <City city={this.props.forecastData.city} />
-        <DayBar dayGroups={groupByDay(this.props.forecastData.forecast)}/>
-        <DayDetails list={this.props.forecastData.forecast} />
+        <City city={this.props.fcData.city} />
+        {this.props.fcData.fetched && content} 
       </div>
     );
   }
@@ -23,13 +35,13 @@ class ForecastApp extends Component {
 
 // props validation
 ForecastApp.propTypes = {
-  forecastData: PropTypes.object,
+  fcData: PropTypes.object,
   fetchForecast: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
   return {
-    forecastData: state.forecastReducers,
+    fcData: state.forecastReducers,
   };
 };
 
