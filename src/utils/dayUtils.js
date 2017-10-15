@@ -20,6 +20,6 @@ export const daySummary = (list) => {
       weather = item.weather[0];
     }
   });
-  const main = { tem_min: temp_min, temp_max: temp_max };
+  const main = { temp_min: temp_min, temp_max: temp_max };
   return { main: main, weather: weather };
 };

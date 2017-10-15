@@ -15,5 +15,4 @@ City.propTypes = {
   city: PropTypes.object,
 };
 
-
 export default City;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import City from '../components/city';
+import DayBar from '../components/dayBar';
 import { fetchForecast } from '../actions/forecastActions';
 import { checkDay, daySummary } from '../utils/dayUtils';
 
@@ -23,6 +24,7 @@ class ForecastApp extends Component {
     return (
       <div>
         <City city={this.props.forecastData.city} />
+        <DayBar list={this.props.forecastData.forecast}/>
         <ul>
           {this.renderForecastList()}               
         </ul>
