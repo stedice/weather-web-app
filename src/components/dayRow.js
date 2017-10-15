@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import WeatherIcon from './weatherIcon';
 import {degToCompass} from '../utils/convertUtils';
 
 
@@ -12,7 +13,7 @@ const DayRow =({item}) => {
   return (
         <tr> 
           <th style={style}>{item.dt_txt.substring(11, 13)}<small>.00</small></th> 
-          <td style={style}><img src={"http://openweathermap.org/img/w/"+item.weather[0].icon+".png"} alt={item.weather[0].description}/></td>
+          <td style={style}><WeatherIcon code={item.weather[0].icon} alt={item.weather[0].description}/></td>
           <td style={style}>{Math.floor(item.main.temp)} <small>°C</small></td> 
           <td style={style}>{Math.floor(item.main.pressure)} <small>hPa</small></td> 
           <td style={style}>{item.main.humidity} <small>%</small></td> 
