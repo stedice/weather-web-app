@@ -8,7 +8,7 @@ const DayDetails = ({ list }) => {
     <table className="table table-striped">
       <thead> 
         <tr> 
-          <th>time</th> 
+          <th className="text-center">time</th> 
           <th className="text-center">weather</th> 
           <th className="text-center">temperature</th> 
           <th className="text-center">pressure</th> 
@@ -28,7 +28,7 @@ const DayDetails = ({ list }) => {
 
 // props validation
 DayDetails.propTypes = {
-  list: PropTypes.object,
+  list: PropTypes.array,
 };
 
 export default DayDetails;
