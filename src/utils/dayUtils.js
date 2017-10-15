@@ -21,24 +21,18 @@ export const groupByDay = (list) => {
   return groups;
 };
 
-export const daySummary = (list=[]) => {  //returns tmin tmax weather_mode
+export const daySummary = (list=[]) => { 
   let temp_min = 999;
   let temp_max = -999;
-  let count = [];
-  let maxCount = 0;
-  let weather = {};
+  const weather = list.length && list[list.length / 2 | 0].weather[0];
   list.forEach((item) => {
     temp_min = Math.min(item.main.temp_min, temp_min);
     temp_max = Math.max(item.main.temp_max, temp_max);
-    count[item.weather[0].id] = count[item.weather[0].id] ? count[item.weather[0].id]++ : 1;
-    if (count[item.weather[0].id] > maxCount) {
-      maxCount = count[item.weather[0].id];
-      weather = item.weather[0];
-    }
   });
   const main = { temp_min: temp_min, temp_max: temp_max };
   return { main: main, weather: weather };
 };
+
 
 export const dayName = (d) => {
   const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];

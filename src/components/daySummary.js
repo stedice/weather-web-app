@@ -11,8 +11,7 @@ const DaySummary = ({ item, dayName }) => {
             <a data-toggle="collapse" data-parent="#accordion" href={"#collapse"+dayName}>
               {dayName}
               <img src={"http://openweathermap.org/img/w/"+item.weather.icon+".png"} alt={item.weather.main}/>
-              min: {Math.floor(item.main.temp_min)}
-              max: {Math.floor(item.main.temp_max)}
+              <strong>{Math.floor(item.main.temp_max)} </strong> <small>{Math.floor(item.main.temp_min)}</small>
             </a>
           </h4>
             </div>
