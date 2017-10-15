@@ -21,8 +21,8 @@ class ForecastApp extends Component {
     const content = (
       <div>
         <DayBar dayGroups={grouped}/>
-        <DayDetails list={grouped[0]} />
-      </div>);//this.props.fcData.forecast
+        <DayDetails list={grouped[this.props.dayReducer]} />
+      </div>);
     
     return (
       <div>
@@ -36,12 +36,14 @@ class ForecastApp extends Component {
 // props validation
 ForecastApp.propTypes = {
   fcData: PropTypes.object,
+  dayReducer: PropTypes.number,
   fetchForecast: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
   return {
     fcData: state.forecastReducers,
+    dayReducer: state.dayReducers,
   };
 };
 
