@@ -7,7 +7,7 @@ import {degToCompass} from '../utils/convertUtils';
 
 
 const DayRow =({item}) => {
-  const rain = (item.rain && item.rain['3h']) || 0;
+  const rain = Math.round(((item.rain && item.rain['3h']) || 0) * 10)/10;
   const style = {
 		textAlign: 'center',
 		verticalAlign: 'middle'

@@ -6,9 +6,9 @@ import WeatherIcon from '../components/weatherIcon';
 import { changeDay } from '../actions/dayActions';
 
 const DaySummary = ({ item, dayName, day, daySelected, changeSelectedDay }) =>{ 
-           //set active dayreducer
+  const active = (daySelected===day) ? "active":"";
   return (
-    <li role="presentation" >
+    <li role="presentation" className={active}>
       <a href="#"  onClick={() => changeSelectedDay(day)}>
         <h3>{dayName}</h3>
         <WeatherIcon code={item.weather.icon} alt={item.weather.description}/>
@@ -25,7 +25,7 @@ DaySummary.propTypes = {
   dayName: PropTypes.string,
   day: PropTypes.number,
   daySelected: PropTypes.number,
-  changeDayy: PropTypes.function,
+  changeSelectedDay: PropTypes.function,
 };
 
 const mapStateToProps = (state) => {
