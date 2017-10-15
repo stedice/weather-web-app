@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import City from '../components/city';
 import DayBar from '../components/dayBar';
 import { fetchForecast } from '../actions/forecastActions';
+import { groupByDay } from '../utils/dayUtils';
+
 
 
 class ForecastApp extends Component {
@@ -21,7 +23,7 @@ class ForecastApp extends Component {
     return (
       <div>
         <City city={this.props.forecastData.city} />
-        <DayBar list={this.props.forecastData.forecast}/>
+        <DayBar dayGroups={groupByDay(this.props.forecastData.forecast)}/>
         <ul>
           {this.renderForecastList()}               
         </ul>

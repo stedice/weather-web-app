@@ -4,17 +4,19 @@ import { daySummary, dayName, groupByDay } from '../utils/dayUtils';
 import DaySummary from './daySummary';
 
 
-const DayBar =({list}) => {
+const DayBar =({dayGroups}) => {
   return (
-      <div> So Mario
-        {groupByDay(list).map((group, i) => <DaySummary key={i} item={daySummary(group)} dayName={dayName(i)}/>)}
+      <div className="panel-group" id="accordion">
+        {dayGroups.map((group, i) => 
+          <DaySummary key={i} item={daySummary(group)} dayName={dayName(i)}/>)
+        }
       </div>
     );
 };
 
 // props validation
 DayBar.propTypes = {
-  list: PropTypes.array,
+  dayGroups: PropTypes.array,
 };
 
 export default DayBar;

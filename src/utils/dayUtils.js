@@ -12,15 +12,16 @@ const getDay = (dt) => { // 0 => today, 1=> tomorrow .....
 export const groupByDay = (list) => {
   const last = list.slice(-1)[0];
   const size = last && getDay(last.dt)+1;
-  const groups = new Array(size).fill(new Array());
+  const groups = new Array(size);
   list.forEach((item)=>{
-    groups[getDay(item.dt)].push(item);
+    const day = getDay(item.dt);
+    groups[day] = groups[day] || [];
+    groups[day].push(item); 
   });
   return groups;
 };
 
-export const daySummary = (list) => {
-  //return tmin tmax weather_mode
+export const daySummary = (list=[]) => {  //returns tmin tmax weather_mode
   let temp_min = 999;
   let temp_max = -999;
   let count = [];
