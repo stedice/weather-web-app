@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { daySummary, dayName } from '../utils/dayUtils';
-import DaySummary from './daySummary';
+import DaySummary from '../containers/daySummary';
 
 
 const DayBar =({dayGroups}) => {

@@ -20,7 +20,7 @@ const DayDetails = ({ list }) => {
         </tr>
       </thead>
       <tbody>
-        {list.map((item, i) => <DayRow key={i} item={item}/>)}
+        {list && list.map((item, i) => <DayRow key={i} item={item}/>)}
       </tbody>
     </table>
   );

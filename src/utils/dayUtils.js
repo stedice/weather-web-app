@@ -5,7 +5,7 @@
 // };
 
 const getDay = (dt) => { // 0 => today, 1=> tomorrow .....
-  const midnight = new Date().setUTCHours(0, 0, 0, 0).valueOf() / 1000;
+  const midnight = new Date().setUTCHours(0, 0, 0, 0).valueOf() / 1000 + 1;
   return ((dt - midnight) / 86400) | 0;
 };
 

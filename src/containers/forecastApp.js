@@ -21,9 +21,8 @@ class ForecastApp extends Component {
     const content = (
       <div>
         <DayBar dayGroups={grouped}/>
-        <DayDetails list={grouped[this.props.dayReducer]} />
+        <DayDetails list={grouped[this.props.dayReducer + 1]} />  // togliere +1
       </div>);
-    
     return (
       <div>
         <City city={this.props.fcData.city} />
