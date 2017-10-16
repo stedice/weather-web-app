@@ -25,7 +25,7 @@ DaySummary.propTypes = {
   dayName: PropTypes.string,
   day: PropTypes.number,
   daySelected: PropTypes.number,
-  changeSelectedDay: PropTypes.function,
+  changeSelectedDay: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {

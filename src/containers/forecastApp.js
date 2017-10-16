@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import City from '../components/city';
+//import City from '../components/city';
+import CityForm from './cityForm';
 import DayBar from '../components/dayBar';
 import DayDetails from '../components/dayDetails';
 import { fetchForecast } from '../actions/forecastActions';
@@ -25,7 +26,7 @@ class ForecastApp extends Component {
       </div>);
     return (
       <div>
-        <City city={this.props.fcData.city} />
+        <CityForm city={this.props.fcData.city} onSubmit={field => this.props.fetchForecast(field.cityField)} />
         {this.props.fcData.fetched && content} 
       </div>
     );
