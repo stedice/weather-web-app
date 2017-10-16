@@ -38,37 +38,38 @@ To **Run a production build**. `npm run build`
 
 ## Features
 
-* Enter city name to get 5 days weather forecast
-* City name is searched in the API and if not found the closest value is returned
-* Daily summary of weather and minimum/maximum temperatures is displayed
-* Select day to get detailed 3 hourly forecast
+* Enter city name to get 5 days weather forecast.
+* City name is searched in the API and if not found the closest value is returned.
+* Daily summary of weather and minimum/maximum temperatures is displayed.
+* Select day to get detailed 3 hourly forecast.
 * Detailed Daily forecast includes the following:
-  * An icon for weather conditions
-  * Air temperature in Celsius degrees
-  * Atmospheric pressure on the sea level in hPa
-  * Relative humidity percentage
-  * Cloudiness in percentage
-  * Wind speed in m/s
-  * Wind direction using compass coordinates
-  * Aggregate rainfall volume for last 3 hours
+  * An icon for weather conditions,
+  * Air temperature in Celsius degrees,
+  * Atmospheric pressure on the sea level in hPa,
+  * Relative humidity percentage,
+  * Cloudiness in percentage,
+  * Wind speed in m/s,
+  * Wind direction using compass coordinates,
+  * Aggregate rainfall volume for last 3 hours.
+
 
 ![Page (Clear Theme)](images/page-clear.png)
 
 ## Future Improvements
 
-* Include more unit tests
+* Include more unit tests.
 * Create an express http proxy server to hide API key in frontend and
-* include a JWT (JSON Web Token) to authenticate requests
-* Include a backend stub for offline testing
+* include a JWT (JSON Web Token) to authenticate requests.
+* Include a backend stub for offline testing.
 * Make use of more React/Redux additional tools es:
 	* `react-bootstrap` for better code readability and faster developing using reusable components
 	* `react-router` to create a "Settings" and an "About" pages
-* Use more dev-tools
-* Improve responsiveness
-* Change dynamically [Bootswatch](https://bootswatch.com/) theme
-* Create local icon library
-* Switch between imperial/metric unit systems
-* Internationalization / Localization
+* Use more dev-tools.
+* Improve responsiveness.
+* Change dynamically [Bootswatch](https://bootswatch.com/) theme.
+* Create local icon library es. [WeatherIcons](https://erikflowers.github.io/weather-icons/).
+* Switch between imperial/metric unit systems.
+* Internationalization / Localization.
 
 ## Technologies
 
