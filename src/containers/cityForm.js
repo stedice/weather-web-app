@@ -4,16 +4,24 @@ import { Field, reduxForm} from 'redux-form';
 
 
 let CityForm = props => {
+  const style={
+      border: 'none', 
+      outline: 'none',
+      fontWeight: 800,
+      'background-color': 'inherit',
+      color: 'white'
+  };
   const { city, handleSubmit } = props;
   const current= city.name + ", " + city.country;
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="city">City:</label>
-        <Field name="cityField" component="input" type="text" placeholder={current}/>
+    <h1>
+    <form className="form-inline" onSubmit={handleSubmit}>
+      <div className="form-group">
+        <label htmlFor="city">Weather Forecast for&nbsp;</label>
+        <Field name="cityField" component="input" type="text" placeholder={current} style={style}/>
       </div>
-      <button type="submit">Submit</button>
     </form>
+    </h1>
     );
 };
 
