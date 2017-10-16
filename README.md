@@ -34,7 +34,7 @@ This will run the automated build process, start up a webserver listening on `lo
 
 To **Run a production build**. `npm run build`
 
-[Page (Dark Theme)](images/page-dark.png)
+[![Page (Dark Theme)](images/page-dark.png)]
 
 ## Features
 
@@ -52,7 +52,7 @@ To **Run a production build**. `npm run build`
   * Wind direction using compass coordinates
   * Aggregate rainfall volume for last 3 hours
 
-[Page (Clear Theme)](images/page-dark.png)
+[![Page (Clear Theme)](images/page-dark.png)]
 
 ## Future Improvements
 
