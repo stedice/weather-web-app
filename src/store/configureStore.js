@@ -3,22 +3,13 @@ import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import promise from "redux-promise-middleware";
 import thunk from 'redux-thunk';
 import logger from "redux-logger";
-
-//import createHistory from 'history/createBrowserHistory';
-// 'routerMiddleware': the new way of storing route changes with redux middleware since rrV4.
-//import { routerMiddleware } from 'react-router-redux';
 import rootReducer from '../reducers';
-//export const history = createHistory();
-function configureStoreProd(initialState) {
-  //const reactRouterMiddleware = routerMiddleware(history);
-  const middlewares = [
-    // Add other middleware on this line...
 
-    // thunk middleware can also accept an extra argument to be passed to each thunk action
-    // https://github.com/gaearon/redux-thunk#injecting-a-custom-argument
+
+const configureStoreProd = (initialState) => {
+  const middlewares = [
     promise(),
     thunk,
-    //reactRouterMiddleware,
   ];
 
   return createStore(rootReducer, initialState, compose(
@@ -27,19 +18,11 @@ function configureStoreProd(initialState) {
   );
 }
 
-function configureStoreDev(initialState) {
-  //const reactRouterMiddleware = routerMiddleware(history);
+const configureStoreDev = (initialState) => {
   const middlewares = [
-    // Add other middleware on this line...
-
-    // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch or between dispatches.
     reduxImmutableStateInvariant(),
-    
     promise(),
-    // thunk middleware can also accept an extra argument to be passed to each thunk action
-    // https://github.com/gaearon/redux-thunk#injecting-a-custom-argument
     thunk,
-    //reactRouterMiddleware,
     logger(),
   ];
 
