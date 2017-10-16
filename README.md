@@ -34,7 +34,7 @@ This will run the automated build process, start up a webserver listening on `lo
 
 To **Run a production build**. `npm run build`
 
-[![Page (Dark Theme)](images/page-dark.png)]
+![Page (Dark Theme)](images/page-dark.png)
 
 ## Features
 
@@ -52,7 +52,7 @@ To **Run a production build**. `npm run build`
   * Wind direction using compass coordinates
   * Aggregate rainfall volume for last 3 hours
 
-[![Page (Clear Theme)](images/page-dark.png)]
+![Page (Clear Theme)](images/page-clear.png)
 
 ## Future Improvements
 
@@ -91,13 +91,3 @@ Slingshot offers a rich development experience using the following technologies:
 | [PostCSS](https://github.com/postcss/postcss) | Transform styles with JS plugins. Used to autoprefix CSS |
 | [Editor Config](http://editorconfig.org) | Enforce consistent editor settings (spaces vs tabs, etc). | [IDE Plugins](http://editorconfig.org/#download) |
 | [npm Scripts](https://docs.npmjs.com/misc/scripts)| Glues all this together in a handy automated build. | [Pluralsight course](https://www.pluralsight.com/courses/npm-build-tool-introduction), [Why not Gulp?](https://medium.com/@housecor/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8#.vtaziro8n)  |
-
-
-
-
-
-
-
-
-
-
