@@ -1,7 +1,7 @@
 import React  from 'react';
 import { shallow } from 'enzyme';
 import WeatherApp from './weatherApp';
-import ForecastApp from '../containers/forecastApp';
+import ForecastApp from '../containers/forecastApp'; // eslint-disable-line
 
 
 describe('<WeatherApp />', () => {

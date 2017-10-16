@@ -1,5 +1,5 @@
 import React  from 'react';
-import ForecastApp from '../containers/forecastApp';
+import ForecastApp from '../containers/forecastApp'; // eslint-disable-line
 
 const WeatherApp = () => {
   return (
