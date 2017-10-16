@@ -8,7 +8,7 @@ let CityForm = props => {
       border: 'none', 
       outline: 'none',
       fontWeight: 800,
-      'background-color': 'inherit',
+      backgroundColor: 'inherit',
       color: 'white'
   };
   const { city, handleSubmit } = props;
