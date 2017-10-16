@@ -16,7 +16,7 @@ const configureStoreProd = (initialState) => {
     applyMiddleware(...middlewares)
     )
   );
-}
+};
 
 const configureStoreDev = (initialState) => {
   const middlewares = [
@@ -41,7 +41,7 @@ const configureStoreDev = (initialState) => {
   }
 
   return store;
-}
+};
 
 const configureStore = process.env.NODE_ENV === 'production' ? configureStoreProd : configureStoreDev;
 

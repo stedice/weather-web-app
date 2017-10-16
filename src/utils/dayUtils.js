@@ -1,9 +1,3 @@
-// const checkDay = (dt, day = 0) => { // day = 0,1,2,3..
-//   const oneDay = 86400;
-//   const midnight = (new Date().setUTCHours(0, 0, 0, 0).valueOf() / 1000) + (oneDay * day);
-//   return (dt > midnight) && (dt <= (midnight + oneDay));
-// };
-
 const getDay = (dt) => { // 0 => today, 1=> tomorrow .....
   const midnight = new Date().setUTCHours(0, 0, 0, 0).valueOf() / 1000 + 1;
   return ((dt - midnight) / 86400) | 0;
