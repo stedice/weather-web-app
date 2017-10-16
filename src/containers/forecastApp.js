@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-//import City from '../components/city';
 import CityForm from './cityForm';
 import DayBar from '../components/dayBar';
 import DayDetails from '../components/dayDetails';
