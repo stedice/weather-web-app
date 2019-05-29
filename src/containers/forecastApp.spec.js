@@ -14,7 +14,6 @@ describe('<ForecastApp />', () => {
       city: {},
       forecast: []
     };
-
     const wrapper = shallow(<ForecastApp actions={actions} fcData={fcdata} dayReducer={0}/>);
     expect(wrapper.find(CityForm).length).toEqual(1);
   });
