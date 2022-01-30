@@ -9,7 +9,7 @@ import { fetchForecast } from '../actions/forecastActions';
 import { groupByDay } from '../utils/dayUtils';
 
 
-export class ForecastApp extends Component { // eslint-disable-line no-named-as-default
+export class ForecastApp extends Component {  // export is used for testing purposes
 
   render() {
     if (this.props.fcData.fetching){
