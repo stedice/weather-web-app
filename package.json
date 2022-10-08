@@ -92,7 +92,7 @@
     "webpack": "4.33.0",
     "webpack-bundle-analyzer": "4.6.1",
     "webpack-dev-middleware": "3.7.0",
-    "webpack-hot-middleware": "2.25.0",
+    "webpack-hot-middleware": "2.25.2",
     "webpack-md5-hash": "0.0.6"
   },
   "keywords": [],
